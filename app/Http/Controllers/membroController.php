@@ -30,7 +30,7 @@ class membroController extends Controller
         //verifique se a tarefa existe
         if($membro == null){
             return response()->json([
-                'erro' => 'Livro não encontrada'
+                'erro' => 'membro não encontrada'
             ]);
         }
         //verificar se o campo existe na request
@@ -64,7 +64,7 @@ class membroController extends Controller
         //verifica se a tarefa exsite ou se a variavel tarefa é nula
         if($membro == null){
             return response()->json([
-                'erro' => 'Autor não encontrada'
+                'erro' => 'membro não encontrada'
             ]);
         }
 
@@ -76,7 +76,7 @@ class membroController extends Controller
 
         if ($membro == null){
             return response()->json([
-                'erro' => 'Autor não encontrada'
+                'erro' => 'membro não encontrada'
             ]);
         }
 

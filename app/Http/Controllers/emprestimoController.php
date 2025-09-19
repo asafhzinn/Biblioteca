@@ -30,7 +30,7 @@ class emprestimoController extends Controller
         //verifique se a tarefa existe
         if($emprestimo == null){
             return response()->json([
-                'erro' => 'Autor não encontrada'
+                'erro' => 'emprestimo não encontrada'
             ]);
         }
         //verificar se o campo existe na request
@@ -63,7 +63,7 @@ class emprestimoController extends Controller
         //verifica se a tarefa exsite ou se a variavel tarefa é nula
         if($emprestimo == null){
             return response()->json([
-                'erro' => 'Autor não encontrada'
+                'erro' => 'emprestimo não encontrada'
             ]);
         }
 
@@ -75,7 +75,7 @@ class emprestimoController extends Controller
 
         if ($emprestimo == null){
             return response()->json([
-                'erro' => 'Autor não encontrada'
+                'erro' => 'emprestimo não encontrada'
             ]);
         }
 

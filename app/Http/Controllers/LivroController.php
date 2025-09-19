@@ -45,7 +45,7 @@ class LivroController extends Controller
         if(isset($request->genero)){
             $livro->genero = $request->genero;
         }
-        
+
 
         $livro->update();
 
@@ -61,7 +61,7 @@ class LivroController extends Controller
         //verifica se a tarefa exsite ou se a variavel tarefa é nula
         if($livro == null){
             return response()->json([
-                'erro' => 'Autor não encontrada'
+                'erro' => 'livro não encontrada'
             ]);
         }
 
@@ -73,7 +73,7 @@ class LivroController extends Controller
 
         if ($livro == null){
             return response()->json([
-                'erro' => 'Autor não encontrada'
+                'erro' => 'livro não encontrada'
             ]);
         }
 
