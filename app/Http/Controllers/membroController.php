@@ -23,4 +23,67 @@ class membroController extends Controller
 
         return response()->json($membros);
     }
+    public function update(Request $request){
+        //buscar a tarefa que sera atulizada
+        $membro = membro::find($request->id);
+
+        //verifique se a tarefa existe
+        if($membro == null){
+            return response()->json([
+                'erro' => 'Livro não encontrada'
+            ]);
+        }
+        //verificar se o campo existe na request
+        if(isset($request->nome_completo)) {
+            $membro->nome_completo = $request->nome_completo;
+        }
+        //verificar se o campo data_hora existe na request
+        if(isset($request->endereco)){
+            $membro->endereco = $request->endereco;
+        }
+        //verificar se o campo descricao existe na request
+        if(isset($request->telefone)){
+            $membro->telefone = $request->telefone;
+        }
+        if(isset($request->data_cadastro)){
+            $membro->data_cadastro = $request->data_cadastro;
+        }
+        
+
+        $membro->update();
+
+        return response()->json([
+            'mensagem' => 'atualizada'
+        ]);
+    }
+
+    public function show($id){
+        //select * from tarefas where id = 1
+        $membro = membro::find($id);
+
+        //verifica se a tarefa exsite ou se a variavel tarefa é nula
+        if($membro == null){
+            return response()->json([
+                'erro' => 'Autor não encontrada'
+            ]);
+        }
+
+        return response()->json($membro);
+    }
+
+    public function delete($id){
+        $membro = membro::find($id);
+
+        if ($membro == null){
+            return response()->json([
+                'erro' => 'Autor não encontrada'
+            ]);
+        }
+
+        $membro->delete();
+
+        return response()->json([
+            'mensagem' => 'excluida'
+        ]);
+    }
 }
